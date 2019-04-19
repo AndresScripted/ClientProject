@@ -18,18 +18,28 @@
     margin-right: 10px;
     
 }
-#main{
-    display: flex;
-    flex-direction: column;
-    height: 500px;
-    
-}
+
 img{
     width:100px;
     height: 100px;
 }
 
-#category{
+
+#input{
     display:flex;
+    justify-content: center;
+    
+}
+
+#categories{
+    display: flex;
     justify-content: space-around;
+    
+    
+    
+}
+
+.one{
+    flex-direction: column;
+    
 }
