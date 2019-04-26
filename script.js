@@ -1,7 +1,8 @@
 /*global $*/
 console.log("hi");
-var randomCharacters = Math.floor(Math.random() * 20);
 
+var randomCharacters = Math.floor(Math.random() * 20);
+console.log(randomCharacters);
 
 function characterChose(){
     var characterSearch = $("#searchInput").val();
@@ -10,16 +11,18 @@ function characterChose(){
         url: url,
         method: "GET",
         success: function(response){
-            if(response.results[0].species === "Human"){
+            if(characterSearch && response.results[0].species === "Human"){
                 $("#categoryOne").append("<img src=" + response.results[0].image + ">", response.results[0].name);
             }
-            else if(response.results[0].species === "unknown"){
+            else if(characterSearch && response.results[0].species === "unknown"){
                 $("#categoryThree").append("<img src=" + response.results[0].image + ">", response.results[0].name);
             }
-            else if(response.results[0].species === "Alien"){
-                $("#categoryTwo").append("<img src=" + response.results[0].image + ">", response.results[0].name);
+            else if(characterSearch){
+                $("#categoryTwo").append("<img src=" + response.results[0].image + ">", response.results[0].name + "Species:" + response.results[0].species);
             }
-            
+            else{
+                
+            }
         }
     });
     
@@ -31,14 +34,20 @@ $("#searchButton").click(function(){
     
 });
 
+
+
+
+
+
+
 function famousLocations(){
-    var locationUrl = "https://rickandmortyapi.com/api/location/";
+    var locationUrl = "https://rickandmortyapi.com/api/location/" ;
     $.ajax({
         url: locationUrl,
         method: "GET",
         success: function(response){
-        $("body").append(response.results.name);  
-            console.log(response.results.name);
+        $("body").append(response.results[0].name);  
+            console.log(response.results[0].name);
         }
     
 });
@@ -47,6 +56,6 @@ function famousLocations(){
 }
 
 $("#locations").click(function(){
-    famousLocations();
+   famousLocations(); 
     
 });
