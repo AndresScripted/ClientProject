@@ -23,6 +23,7 @@ function characterChose(){
             else{
                 
             }
+            
         }
     });
     
@@ -37,25 +38,3 @@ $("#searchButton").click(function(){
 
 
 
-
-
-
-function famousLocations(){
-    var locationUrl = "https://rickandmortyapi.com/api/location/" ;
-    $.ajax({
-        url: locationUrl,
-        method: "GET",
-        success: function(response){
-        $("body").append(response.results[0].name);  
-            console.log(response.results[0].name);
-        }
-    
-});
-
-    
-}
-
-$("#locations").click(function(){
-   famousLocations(); 
-    
-});

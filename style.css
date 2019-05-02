@@ -19,10 +19,6 @@
     
 }
 
-img{
-    width:100px;
-    height: 100px;
-}
 
 
 #input{
@@ -39,7 +35,4 @@ img{
     
 }
 
-.one{
-    flex-direction: column;
-    
-}
+
