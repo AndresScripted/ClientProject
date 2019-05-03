@@ -28,7 +28,7 @@ randomPlanet = randomPlanet + 1;
         url: locationUrl,
         method: "GET",
         success: function(x){
-            $("#main").append("<img src=" + planetImgs[randomPlanet - 1] + ">" + x.name);
+            $("#main").append("<img src=" + planetImgs[randomPlanet - 1] + ">" + "<h1>" + x.name + "</h1>");
             console.log(planetImgs[randomPlanet]);
             console.log(x.name);
             console.log(randomPlanet);
@@ -38,6 +38,12 @@ randomPlanet = randomPlanet + 1;
 
 $("#displayImg").click(function(){
    famousLocations(); 
-   $("img").css("border", "red");
+   
     
+});
+
+$("#home").click(function(){
+    $("#home").append("<a href=" + "index.html" + ">" + "</a>")
+    
+        
 });
