@@ -25,6 +25,7 @@
     display:flex;
     justify-content: center;
     
+    
 }
 
 #categories{
@@ -32,7 +33,26 @@
     justify-content: space-around;
     
     
-    
 }
 
-
+#title{
+    font-family: 'Shadows Into Light', cursive;
+}
+#categoryOne{
+    font-family: 'Sofia', cursive;
+    flex-direction: column;
+    width: 30%;
+    text-align: center;
+}
+#categoryTwo{
+    font-family: 'Open Sans Condensed', sans-serif;
+    flex-direction: column;
+    width:30%;
+    text-align: center;
+}
+#categoryThree{
+    font-family: 'Roboto', sans-serif;
+    flex-direction: column;
+    width:30%;
+    text-align: center;
+}

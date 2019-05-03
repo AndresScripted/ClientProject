@@ -1,9 +1,5 @@
 /*global $*/
 console.log("hi");
-
-var randomCharacters = Math.floor(Math.random() * 20);
-console.log(randomCharacters);
-
 function characterChose(){
     var characterSearch = $("#searchInput").val();
     var url = "https://rickandmortyapi.com/api/character/?name=" + characterSearch ;
@@ -30,11 +26,50 @@ function characterChose(){
     
 }
 
+
+function randomCharacter(){
+    var randomNum = Math.floor(Math.random() * 20) + 1;
+    let url ="https://rickandmortyapi.com/api/character/" + randomNum;   
+    $.ajax({
+        url: url,
+        method: "GET",
+        success: function(y){
+            if(y.id === randomNum && y.species === "Human"){
+                $("#categoryOne").append("<img src=" + y.image + ">" + "<h1>" + y.name + "</h1>");
+            }
+            else if(y.id === randomNum && y.species === "unknown"){
+                $("#categoryThree").append("<img src=" + y.image + ">" + "<h1>" + y.name + "</h1>");
+            }
+            else if(y.id === randomNum){
+                $("#categoryTwo").append("<img src=" + y.image + ">" + "<h1>" + y.name + "</h1>" + "Species " + "<p>" + y.species + "</p>");
+            }
+            else{
+                
+            }
+    }
+        
+            
+    });
+    
+    
+    
+    
+}
+
+
+
+
+
+
+
 $("#searchButton").click(function(){
     characterChose();
     
 });
 
 
-
+$("#randomCharac").click(function(){
+   randomCharacter(); 
+    
+});
 
