@@ -1,5 +1,6 @@
 /*global $*/
 console.log("hi");
+
 function characterChose(){
     var characterSearch = $("#searchInput").val();
     var url = "https://rickandmortyapi.com/api/character/?name=" + characterSearch ;
@@ -8,13 +9,13 @@ function characterChose(){
         method: "GET",
         success: function(response){
             if(characterSearch && response.results[0].species === "Human"){
-                $("#categoryOne").append("<img src=" + response.results[0].image + ">", response.results[0].name);
+                $("#categoryOne").append("<img src=" + response.results[0].image + ">", "<h1>" + response.results[0].name + "</h1>");
             }
             else if(characterSearch && response.results[0].species === "unknown"){
-                $("#categoryThree").append("<img src=" + response.results[0].image + ">", response.results[0].name);
+                $("#categoryThree").append("<img src=" + response.results[0].image + ">", "<h1>" + response.results[0].name + "</h1>");
             }
             else if(characterSearch){
-                $("#categoryTwo").append("<img src=" + response.results[0].image + ">", response.results[0].name + "Species:" + response.results[0].species);
+                $("#categoryTwo").append("<img src=" + response.results[0].image + ">", "<h1>" + response.results[0].name + "</h1>" + "Species:" + "<p>" + response.results[0].species + "</p>");
             }
             else{
                 
@@ -28,8 +29,8 @@ function characterChose(){
 
 
 function randomCharacter(){
-    var randomNum = Math.floor(Math.random() * 20) + 1;
-    let url ="https://rickandmortyapi.com/api/character/" + randomNum;   
+    var randomNum = Math.floor(Math.random() * 493) + 1;
+    var url ="https://rickandmortyapi.com/api/character/" + randomNum;
     $.ajax({
         url: url,
         method: "GET",
@@ -37,16 +38,16 @@ function randomCharacter(){
             if(y.id === randomNum && y.species === "Human"){
                 $("#categoryOne").append("<img src=" + y.image + ">" + "<h1>" + y.name + "</h1>");
             }
-            else if(y.id === randomNum && y.species === "unknown"){
+           
+            else if(y.id === randomNum && y.species === "Alien"){
                 $("#categoryThree").append("<img src=" + y.image + ">" + "<h1>" + y.name + "</h1>");
-            }
-            else if(y.id === randomNum){
-                $("#categoryTwo").append("<img src=" + y.image + ">" + "<h1>" + y.name + "</h1>" + "Species " + "<p>" + y.species + "</p>");
-            }
-            else{
                 
             }
-    }
+            else if(y.id === randomNum && y.species !== "Alien"){
+                $("#categoryTwo").append("<img src=" + y.image + ">" + "<h1>" + y.name + "</h1>" + "Species " + "<p>" + y.species + "</p>");
+            }
+        
+        }
         
             
     });
@@ -73,3 +74,7 @@ $("#randomCharac").click(function(){
     
 });
 
+$("#locations").click(function(){
+   window.location = "location-page.html"; 
+    
+});

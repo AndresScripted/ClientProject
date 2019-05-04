@@ -43,7 +43,6 @@ $("#displayImg").click(function(){
 });
 
 $("#home").click(function(){
-    $("#home").append("<a href=" + "index.html" + ">" + "</a>")
-    
+    window.location = "index.html";
         
 });
