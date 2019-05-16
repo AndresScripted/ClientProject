@@ -18,10 +18,8 @@ var planetImgs = ["https://vignette.wikia.nocookie.net/rickandmorty/images/9/9a/
 console.log("hi");
 
 function famousLocations(){
-var randomPlanet = Math.floor(Math.random() * 20);
-randomPlanet = randomPlanet + 1;
-/* = planetImgs[randomPlanet];*/
-
+var randomPlanet = Math.floor(Math.random() * 76) + 1;
+    randomPlanet = randomPlanet + 1;
     var locationUrl = "https://rickandmortyapi.com/api/location/"+ randomPlanet;
     console.log(locationUrl);
     $.ajax({

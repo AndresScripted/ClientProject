@@ -1,0 +1,51 @@
+body{
+    background-image: radial-gradient(circle, #91D1C2, #075149);
+    
+}
+
+#header{
+    color: #35C9DD;
+    text-shadow: -1px 0 #97CE4C, 0 1px #97CE4C, 1px 0 #97CE4C, 0 -1px #97CE4C;
+    font-size: 25px;
+    overflow: hidden;
+    position: fixed; 
+    top: 0; 
+    left:0;
+    width: 100%;
+    background-color:#000000;
+    background-size: auto;
+    text-align: center;
+
+}
+
+button{
+    margin: 10px;
+    border: 1px solid #000000;
+    background: #65d4bc;
+    padding: 8.5px 17px;
+    border-radius: 40px;
+    box-shadow: rgba(0,0,0,1) 0 1px 0;
+    text-shadow: rgba(0,0,0,.4) 0 1px 0;
+    font-size: 14px;
+}
+   
+button:hover{
+    border-top-color: #34b06a;
+    background: #34b06a;
+}
+
+button:active {
+   border-top-color: #ffffff;
+   background: #ffffff;
+}
+
+#title{
+    font-family: 'Shadows Into Light', cursive;
+    
+}
+
+#main{
+    height: 80%;
+    text-align: center;
+    margin-top: 250px;
+}

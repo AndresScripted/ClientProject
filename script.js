@@ -78,3 +78,8 @@ $("#locations").click(function(){
    window.location = "location-page.html"; 
     
 });
+
+$("#info").click(function(){
+   window.location = "randomEP.html"; 
+    
+});
